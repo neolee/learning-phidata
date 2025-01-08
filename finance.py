@@ -1,7 +1,9 @@
 from phi.agent.agent import Agent
 from phi.tools.yfinance import YFinanceTools
-from llm import model
+import llm
 
+
+model = llm.ollama
 
 agent = Agent(
     name="Finance Agent",

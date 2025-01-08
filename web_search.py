@@ -1,7 +1,9 @@
 from phi.agent.agent import Agent
 from phi.tools.duckduckgo import DuckDuckGo
-from llm import model
+import llm
 
+
+model = llm.ollama
 
 agent = Agent(
     name="Web Agent",
@@ -12,6 +14,6 @@ agent = Agent(
     markdown=True,
 )
 
-q = "Tell me about NVIDIA's Digits"
+q = "Tell me about NVIDIA's Digits computer"
 
 agent.print_response(q)
