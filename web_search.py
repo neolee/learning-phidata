@@ -1,13 +1,7 @@
 from phi.agent.agent import Agent
-from phi.model.openai.like import OpenAILike
 from phi.tools.duckduckgo import DuckDuckGo
+from llm import model
 
-
-model = OpenAILike(
-    id="qwen2.5-coder-32b-instruct-mlx",
-    api_key="lm-studio",
-    base_url="http://127.0.0.1:1234/v1",
-)
 
 agent = Agent(
     name="Web Agent",
