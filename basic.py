@@ -1,7 +1,9 @@
 from phi.agent.agent import Agent
 from phi.run.response import RunResponse
-from llm import model
+import llm
 
+
+model = llm.ollama
 
 agent = Agent(
     name="Basic Agent",
