@@ -4,7 +4,7 @@ import llm
 
 def reasoning(task: str):
     reasoning_agent = Agent(
-        model=llm.ollama, # type: ignore
+        model=llm.default, # type: ignore
         reasoning=True,
         markdown=True,
         structured_outputs=True

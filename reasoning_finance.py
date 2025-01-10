@@ -4,7 +4,7 @@ import llm
 
 
 reasoning_agent = Agent(
-    model=llm.ollama, #type: ignore
+    model=llm.default, #type: ignore
     tools=[YFinanceTools(stock_price=True,
                          analyst_recommendations=True,
                          company_info=True,

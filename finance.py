@@ -3,11 +3,9 @@ from phi.tools.yfinance import YFinanceTools
 import llm
 
 
-model = llm.ollama
-
 agent = Agent(
     name="Finance Agent",
-    model=model, # type: ignore
+    model=llm.default, # type: ignore
     tools=[YFinanceTools(stock_price=True,
                          analyst_recommendations=True,
                          company_info=True,
