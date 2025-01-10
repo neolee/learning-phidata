@@ -6,8 +6,6 @@ from phi.vectordb.search import SearchType
 import llm
 
 
-model = llm.ollama
-
 # create a knowledge base from a pdf
 knowledge_base = PDFKnowledgeBase(
     path="db/pdfs",
@@ -23,7 +21,7 @@ knowledge_base = PDFKnowledgeBase(
 knowledge_base.load(recreate=False, skip_existing=True) # type: ignore
 
 agent = Agent(
-    model=model, # type: ignore
+    model=llm.default, # type: ignore
     knowledge=knowledge_base, # type: ignore
     show_tool_calls=True,
     markdown=True,

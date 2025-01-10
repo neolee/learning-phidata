@@ -6,8 +6,6 @@ from phi.run.response import RunResponse
 import llm
 
 
-model = llm.ollama
-
 # pydantic model to enforce the structure of the output
 class MovieScript(BaseModel):
     setting: str = Field(..., description="Provide a nice setting for a blockbuster movie.")
@@ -18,7 +16,7 @@ class MovieScript(BaseModel):
     storyline: str = Field(..., description="3 sentence storyline for the movie. Make it exciting!")
 
 structured_output_agent = Agent(
-    model=model, # type: ignore
+    model=llm.default, # type: ignore
     description="You write movie scripts.",
     response_model=MovieScript, # type: ignore
 )

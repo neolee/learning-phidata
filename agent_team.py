@@ -4,12 +4,12 @@ from phi.tools.yfinance import YFinanceTools
 import llm
 
 
-model = llm.ollama
+m = llm.default
 
 web_agent = Agent(
     name="Web Agent",
     role="Search the web for information",
-    model=model, #type: ignore
+    model=m, #type: ignore
     tools=[DuckDuckGo()],
     instructions=["Always include sources"],
     show_tool_calls=True,
@@ -19,7 +19,7 @@ web_agent = Agent(
 finance_agent = Agent(
     name="Finance Agent",
     role="Get financial data",
-    model=model, # type: ignore
+    model=m, # type: ignore
     tools=[YFinanceTools(stock_price=True,
                          analyst_recommendations=True,
                          company_info=True,
@@ -30,7 +30,7 @@ finance_agent = Agent(
 )
 
 agent_team = Agent(
-    model=model, # type:ignore
+    model=m, # type:ignore
     team=[web_agent, finance_agent],
     instructions=["Always include sources", "Use tables to display data"],
     show_tool_calls=True,

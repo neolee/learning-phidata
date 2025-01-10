@@ -7,11 +7,11 @@ from phi.playground.serve import serve_playground_app
 import llm
 
 
-model = llm.ollama
+m = llm.default
 
 web_agent = Agent(
     name="Web Agent",
-    model=model, #type: ignore
+    model=m, #type: ignore
     tools=[DuckDuckGo()],
     instructions=["Always include sources"],
     storage=SqlAgentStorage(table_name="web_agent", db_file="db/agents.db"),
@@ -21,7 +21,7 @@ web_agent = Agent(
 
 finance_agent = Agent(
     name="Finance Agent",
-    model=model, #type: ignore
+    model=m, #type: ignore
     tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, company_info=True, company_news=True)],
     instructions=["Use tables to display data"],
     storage=SqlAgentStorage(table_name="finance_agent", db_file="db/agents.db"),

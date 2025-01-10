@@ -3,11 +3,9 @@ from phi.tools.duckduckgo import DuckDuckGo
 import llm
 
 
-model = llm.ollama
-
 agent = Agent(
     name="Web Agent",
-    model=model, #type: ignore
+    model=llm.default, #type: ignore
     tools=[DuckDuckGo()],
     instructions=["Always include sources"],
     show_tool_calls=True,
