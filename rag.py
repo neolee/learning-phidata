@@ -17,7 +17,7 @@ knowledge_base = PDFKnowledgeBase(
         )
 )
 
-# BUG these 2 parameters not working for now, wait for phidata upcoming fix
+# these 2 parameters are set their default values, keep them here just for note
 knowledge_base.load(recreate=False, skip_existing=True) # type: ignore
 
 agent = Agent(
@@ -27,8 +27,8 @@ agent = Agent(
     markdown=True,
 )
 
-# q = "What is the 'CAP Theorem'?"
-q = "Explain to me what 'Illiberal Democracy' is"
-# q = "What is the 'Conservative Promises'?"
+# q = "What is the 'CAP Theorem' in software architecture?"
+# q = "Explain to me what 'Illiberal Democracy' is"
+q = "为什么我们要批判新制度经济学？"
 
 agent.print_response(q, stream=True)
