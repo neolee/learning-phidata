@@ -1,5 +1,6 @@
 from phi.model.openai.like import OpenAILike
 from phi.model.ollama.chat import Ollama
+from phi.model.deepseek.deepseek import DeepSeekChat
 
 
 ollama_phi = Ollama(id="phi-4")
@@ -13,6 +14,8 @@ lmstudio = OpenAILike(
     api_key="lmstudio",
     base_url="http://127.0.0.1:1234/v1",
 )
+
+deepseek = DeepSeekChat(id="deepseek-chat")
 
 default = ollama_qwen
 coding = ollama_qwen_coder
