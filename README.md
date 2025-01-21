@@ -8,6 +8,8 @@ pip install packaging openai phidata ollama
 
 # tools deps
 pip install 'httpx[socks]' duckduckgo-search yfinance
+pip install googlesearch-python pycountry
+pip install crawl4ai
 
 # rag deps
 pip install lancedb tantivy pypdf sqlalchemy
@@ -25,8 +27,8 @@ pip install 'fastapi[standard]' sqlalchemy
   - based on hf.co/bartowski/Qwen2.5-14B-Instruct-GGUF:IQ4_XS
 - qwen2.5-coder:32b `tools` `coding`
   - based on hf.co/bartowski/Qwen2.5-Coder-32B-Instruct-GGUF:IQ4_XS
-- qwq `tools` `auto-reasoning`
-  - based on hf.co/bartowski/QwQ-32B-Preview-GGUF:IQ4_XS
+- r1-qwen:32b `tools` `auto-reasoning`
+  - based on hf.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF:IQ4_XS
   
 #### Embedding Models
 - snowflake-arctic-embed2 `embedding`
