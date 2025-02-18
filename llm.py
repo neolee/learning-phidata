@@ -15,6 +15,11 @@ lmstudio = OpenAILike(
     api_key="lmstudio",
     base_url="http://127.0.0.1:1234/v1",
 )
+ali_qwen = OpenAILike(
+    id="qwen-max-latest",
+    api_key=os.environ.get("ALIYUN_API_KEY"),
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+)
 ali_deepseek = OpenAILike(
     id="deepseek-v3",
     api_key=os.environ.get("ALIYUN_API_KEY"),
@@ -28,6 +33,6 @@ ali_deepseek_r1 = OpenAILike(
 
 deepseek = DeepSeekChat(id="deepseek-chat")
 
-default = ollama_qwen
+default = ali_qwen
 coding = ollama_qwen_coder
 reasoning = ollama_r1_qwen
