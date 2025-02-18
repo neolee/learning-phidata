@@ -1,3 +1,4 @@
+import os
 from phi.model.openai.like import OpenAILike
 from phi.model.ollama.chat import Ollama
 from phi.model.deepseek.deepseek import DeepSeekChat
@@ -13,6 +14,16 @@ lmstudio = OpenAILike(
     id="default",
     api_key="lmstudio",
     base_url="http://127.0.0.1:1234/v1",
+)
+ali_deepseek = OpenAILike(
+    id="deepseek-v3",
+    api_key=os.environ.get("ALIYUN_API_KEY"),
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+)
+ali_deepseek_r1 = OpenAILike(
+    id="deepseek-r1",
+    api_key=os.environ.get("ALIYUN_API_KEY"),
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 
 deepseek = DeepSeekChat(id="deepseek-chat")
